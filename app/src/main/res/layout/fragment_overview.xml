@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="300dp"
+        android:clickable="true"
+        android:src="@drawable/baseline_fullscreen_24" />
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.overview.OverviewFragment"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="0dp">
+
+        <!-- Isi layout lainnya seperti yang telah Anda cantumkan -->
+
+        <TextView
+            android:id="@+id/title_overview"
+            android:layout_width="218dp"
+            android:layout_height="113dp"
+            android:fontFamily="@font/poppins_bold"
+            android:lineHeight="56dp"
+            android:text="Daily Progress"
+            android:textColor="@color/dark_green"
+            android:textSize="42sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_calendar_month_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_overview" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Tue, 6 Oct"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/title_overview" />
+
+        <TextView
+            android:id="@+id/tv_title_foodrec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Food Recommendation"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/title_overview"
+            app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_foodrecommendation"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_foodrec"
+            tools:listitem="@layout/item_food"/>
+
+
+<!--        card-->
+
+        <TextView
+            android:id="@+id/tv_title_calories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Calories"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/title_overview"
+            app:layout_constraintTop_toBottomOf="@+id/rv_foodrecommendation" />
+
+        <!-- CardView untuk menampung gambar, judul, dan deskripsi -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_calories"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="false"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- ImageView di sisi kiri -->
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="10dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/calories" />
+
+                <!-- Container untuk judul dan deskripsi -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/tvcount_curr_calories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="800 kcal"
+                        android:textColor="@color/dark_green"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvcount_goal_calories"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Goal: 2000 kcal"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="0dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+<!--        card carbo-->
+        <TextView
+            android:id="@+id/tv_title_carbo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Carbohydrates"
+            android:textColor="@color/dark_green"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/title_overview"
+            app:layout_constraintTop_toBottomOf="@+id/cardView1" />
+
+        <!-- CardView untuk menampung gambar, judul, dan deskripsi -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_carbo"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true"
+            app:cardPreventCornerOverlap="false"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <!-- ImageView di sisi kiri -->
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="10dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/calories" />
+
+                <!-- Container untuk judul dan deskripsi -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="8dp">
+
+                    <TextView
+                        android:id="@+id/tvcount_curr_carbo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/poppins_bold"
+                        android:text="2.5 gr"
+                        android:textColor="@color/dark_green"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvcount_goal_carbo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Goal: 55gr/day"
+                        android:fontFamily="@font/poppins_medium"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:layout_marginTop="0dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
