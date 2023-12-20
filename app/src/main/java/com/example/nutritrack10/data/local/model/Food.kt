@@ -1,4 +1,4 @@
-package com.example.nutritrack10.model
+package com.example.nutritrack10.data.local.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

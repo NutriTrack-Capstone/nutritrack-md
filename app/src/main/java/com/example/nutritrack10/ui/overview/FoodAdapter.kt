@@ -11,31 +11,8 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritrack10.R
 import com.example.nutritrack10.databinding.ItemFoodBinding
-import com.example.nutritrack10.model.Food
+import com.example.nutritrack10.data.local.model.Food
 
-
-//class FoodAdapter(private val listFood: List<Food>) : RecyclerView.Adapter<FoodAdapter.ListViewHolder>() {
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-//        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_food, parent, false)
-//        return ListViewHolder(view)
-//    }
-//    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val food = listFood[position]
-////        val (name, cal, photo) = listFood[position]
-////        holder.imgPhoto.setImageResource(photo)
-////        holder.tvName.text = name
-////        holder.tvDescription.text = cal
-//    }
-//
-//    override fun getItemCount(): Int = listFood.size
-//
-//    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val imgPhoto: ImageView = itemView.findViewById(R.id.img_food)
-//        val tvName: TextView = itemView.findViewById(R.id.tv_foodname)
-//        val tvDescription: TextView = itemView.findViewById(R.id.tv_foodcal)
-//    }
-//}
 class FoodAdapter(private val dataList: List<Food>) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

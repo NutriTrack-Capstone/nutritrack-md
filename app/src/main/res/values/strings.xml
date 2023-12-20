@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NutriTrack1.0</string>
+    <string name="app_name">NutriTrack</string>
     <string name="overview">Overview</string>
     <string name="explore">Explore</string>
     <string name="personalize">Personalize</string>

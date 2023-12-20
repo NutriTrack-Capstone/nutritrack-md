@@ -1,22 +1,177 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.personalize.PersonalizeFragment">
+    >
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <ScrollView
+        android:id="@+id/scrollViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_personalize"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/personalize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/img_personalize">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="0dp"
+                    tools:context=".MainActivity">
+
+                    <TextView
+                        android:id="@+id/textViewAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Age"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_green"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <EditText
+                        android:id="@+id/editTextAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewAge"
+                        android:layout_marginTop="8dp"
+                        android:hint="Number only"
+                        android:inputType="number"
+                        android:background="@drawable/oval_field_background"
+                        android:padding="12dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewHeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editTextAge"
+                        android:layout_marginTop="16dp"
+                        android:text="Height"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_green"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <EditText
+                        android:id="@+id/editTextHeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewHeight"
+                        android:layout_marginTop="8dp"
+                        android:hint="In centimeters"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/oval_field_background"
+                        android:padding="12dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editTextHeight"
+                        android:layout_marginTop="16dp"
+                        android:text="Weight"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_green"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <EditText
+                        android:id="@+id/editTextWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewWeight"
+                        android:layout_marginTop="8dp"
+                        android:hint="In kilograms"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/oval_field_background"
+                        android:padding="12dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewGender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/editTextWeight"
+                        android:layout_marginTop="16dp"
+                        android:text="Gender"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/dark_green"
+                        android:fontFamily="@font/poppins_bold"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupGender"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/textViewGender"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:paddingRight="10dp"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Male" />
+                    </RadioGroup>
+
+                    <Button
+                        android:id="@+id/buttonSubmit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/radioGroupGender"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/oval_button_background"
+                        android:text="Submit" />
+
+                </RelativeLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        android:src="@drawable/baseline_logout_24"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/scrollViewMain" />
+
+</RelativeLayout>
