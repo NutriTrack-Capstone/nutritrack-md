@@ -13,9 +13,6 @@ import kotlinx.coroutines.launch
 
 class ExploreViewModel(private val userRepository: UserRepository) : ViewModel() {
 
-//    private val _response = MutableLiveData<GetExploreFoodResponse>()
-//    val response: LiveData<GetExploreFoodResponse> get() = _response
-
     private val _response = MutableLiveData<ExploreResponse>()
     val response: LiveData<ExploreResponse> get() = _response
     fun getExploreData(string: String){
