@@ -10,14 +10,27 @@ data class GetRecommendationResponse(
 	@field:SerializedName("status")
 	val status: String? = null
 )
+data class Data(
 
+	@field:SerializedName("recomendation1")
+	val recomendation1: Recomendation1? = null,
+
+	@field:SerializedName("recomendation3")
+	val recomendation3: Recomendation3? = null,
+
+	@field:SerializedName("recomendation2")
+	val recomendation2: Recomendation2? = null
+)
 data class Recomendation1(
 
 	@field:SerializedName("carbo")
 	val carbo: Int? = null,
 
+//	@field:SerializedName("image")
+//	val image: Any? = null,
+
 	@field:SerializedName("image")
-	val image: Any? = null,
+	val image: String? = null,
 
 	@field:SerializedName("protein")
 	val protein: Int? = null,
@@ -37,8 +50,11 @@ data class Recomendation2(
 	@field:SerializedName("carbo")
 	val carbo: Int? = null,
 
+//	@field:SerializedName("image")
+//	val image: Any? = null,
+
 	@field:SerializedName("image")
-	val image: Any? = null,
+	val image: String? = null,
 
 	@field:SerializedName("protein")
 	val protein: Int? = null,
@@ -58,8 +74,11 @@ data class Recomendation3(
 	@field:SerializedName("carbo")
 	val carbo: Int? = null,
 
+//	@field:SerializedName("image")
+//	val image: Any? = null,
+
 	@field:SerializedName("image")
-	val image: Any? = null,
+	val image: String? = null,
 
 	@field:SerializedName("protein")
 	val protein: Int? = null,
@@ -74,14 +93,4 @@ data class Recomendation3(
 	val calories: Int? = null
 )
 
-data class Data(
 
-	@field:SerializedName("recomendation1")
-	val recomendation1: Recomendation1? = null,
-
-	@field:SerializedName("recomendation3")
-	val recomendation3: Recomendation3? = null,
-
-	@field:SerializedName("recomendation2")
-	val recomendation2: Recomendation2? = null
-)

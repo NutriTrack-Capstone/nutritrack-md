@@ -2,7 +2,7 @@ package com.example.nutritrack10.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class ResetAllUserResponse(
+data class UpdateDailyResponse(
 
 	@field:SerializedName("message")
 	val message: String? = null,

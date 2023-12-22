@@ -17,20 +17,32 @@ data class GetDailyNutritionResponse(
 
 data class DailyNutrition(
 
-	@field:SerializedName("maintainFat")
-	val maintainFat: Int? = null,
+	@field:SerializedName("currentCalories")
+	val currentCalories: Int? = null,
 
 	@field:SerializedName("maintainProtein")
 	val maintainProtein: Int? = null,
 
-	@field:SerializedName("dailyCaloriesLeft")
-	val dailyCaloriesLeft: Int? = null,
-
 	@field:SerializedName("maintainCalories")
 	val maintainCalories: Int? = null,
 
+	@field:SerializedName("currentCarbo")
+	val currentCarbo: Int? = null,
+
+	@field:SerializedName("maintainFat")
+	val maintainFat: Int? = null,
+
+	@field:SerializedName("dailyCaloriesLeft")
+	val dailyCaloriesLeft: Int? = null,
+
+	@field:SerializedName("currentFat")
+	val currentFat: Int? = null,
+
 	@field:SerializedName("dailyProteinLeft")
 	val dailyProteinLeft: Int? = null,
+
+	@field:SerializedName("currentProtein")
+	val currentProtein: Int? = null,
 
 	@field:SerializedName("dailyCarboLeft")
 	val dailyCarboLeft: Int? = null,

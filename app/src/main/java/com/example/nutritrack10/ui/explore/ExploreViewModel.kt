@@ -6,14 +6,18 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.nutritrack10.data.remote.UserRepository
 import com.example.nutritrack10.data.remote.model.FoodItem
+import com.example.nutritrack10.data.remote.response.ExploreResponse
 import com.example.nutritrack10.data.remote.response.GetExploreFoodResponse
 import com.example.nutritrack10.data.remote.response.LoginResponse
 import kotlinx.coroutines.launch
 
 class ExploreViewModel(private val userRepository: UserRepository) : ViewModel() {
 
-    private val _response = MutableLiveData<GetExploreFoodResponse>()
-    val response: LiveData<GetExploreFoodResponse> get() = _response
+//    private val _response = MutableLiveData<GetExploreFoodResponse>()
+//    val response: LiveData<GetExploreFoodResponse> get() = _response
+
+    private val _response = MutableLiveData<ExploreResponse>()
+    val response: LiveData<ExploreResponse> get() = _response
     fun getExploreData(string: String){
         viewModelScope.launch {
             try {

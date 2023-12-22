@@ -28,10 +28,15 @@ class OverviewViewModel(private val userRepository: UserRepository) : ViewModel(
     val capturedImage: LiveData<Bitmap?> get() = _capturedImage
 
 //    recommendation
-    private val _recommmendation1 = MutableLiveData<GetRecommendationResponse>()
-    val recomendation1: LiveData<GetRecommendationResponse> get() = _recommmendation1
+//    private val _recommmendation1 = MutableLiveData<GetRecommendationResponse>()
+//    val recomendation1: LiveData<GetRecommendationResponse> get() = _recommmendation1
 
-//    menyimpan login
+//    recommendation
+    private val _recommendationData = MutableLiveData<GetRecommendationResponse>()
+    val recommendationData: LiveData<GetRecommendationResponse> get() = _recommendationData
+
+
+    //    menyimpan login
     private val _loginResponse = MutableLiveData<LoginResponse>()
     val loginResponse: LiveData<LoginResponse> get() = _loginResponse
 
@@ -45,6 +50,24 @@ class OverviewViewModel(private val userRepository: UserRepository) : ViewModel(
             }
         }
     }
+    fun fetchRecommendationData(maintenanceCalories: Int, calorieLeft: Int) {
+        viewModelScope.launch {
+            try {
+                val recommendationResponse = userRepository.getRecommendation(maintenanceCalories, calorieLeft)
+                _recommendationData.postValue(recommendationResponse)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+
+//    fun getRecommendation1(maintenanceCalories: Int, calorieLeft: Int): LiveData<RecomendationData>{
+//        viewModelScope.launch {
+//            userRepository.getRecommendation(maintenanceCalories, calorieLeft)
+//        }
+//        return _recommmendationData
+//    }
 
 //    err
 //    fun funtion(): LiveData<GetDailyNutritionResponse>{
@@ -67,19 +90,14 @@ class OverviewViewModel(private val userRepository: UserRepository) : ViewModel(
         return _response
     }
 
-//    fun getRecommendation1(maintenanceCalories: Int, calorieLeft: Int): LiveData<Recomendation1>{
-//        viewModelScope.launch {
-//            userRepository.getRecommendation(maintenanceCalories, calorieLeft)
-//        }
-//        return _recommmendation1
-//    }
-
-//    fun getRecommendation1(maintenanceCalories: Int, calorieLeft: Int): LiveData<GetRecommendationResponse>{
+//
+//    fun getRecommendation2(maintenanceCalories: Int, calorieLeft: Int): LiveData<GetRecommendationResponse>{
 //        viewModelScope.launch {
 //            _recommmendation1.postValue(userRepository.getRecommendation(maintenanceCalories, calorieLeft))
 //        }
 //        return _recommmendation1
 //    }
+//    recommendation
 
     fun setCurrentDate(string: String) {
         viewModelScope.launch {
